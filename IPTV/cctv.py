@@ -53,7 +53,7 @@ siteName = NAME
 title = NAME
 name = NAME                                                  # 模块级 name：壳若直接读模块属性用的就是它
 
-UPDATED = "2026-11-25 14:23:01"                                  # 数据更新时间
+UPDATED = "2026-11-25 14:55:47"                                  # 数据更新时间
 COUNT = 56                                        # 频道数
 LINES = 163                                        # 线路总数
 
@@ -1941,3 +1941,5 @@ if __name__ == "__main__":
               " / ".join(x["vod_name"] for x in r["list"][:4]))
 
     print("\n自测", "通过" if not bad else "存在异常，请检查上面带 ! 的行")
+    if bad:
+        sys.exit(1)          # 有异常就非零退出，脚本/CI 才能感知失败
